@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1350" viewBox="0 0 1800 1350">
+  <rect width="1800" height="1350" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#687c8f"/></marker>
+  </defs>
+  <style>
+    text {font-family: 'Arial Unicode MS', 'PingFang TC', 'Microsoft JhengHei', sans-serif; fill: #1d2d3d}
+    .title {font-size:48px;font-weight:700} .subtitle {font-size:25px;fill:#536a80}
+    .box-title {font-size:31px;font-weight:700} .func {font-size:24px;fill:#36536c} .detail {font-size:24px;fill:#40566a}
+    .section {font-size:27px;font-weight:700} .badge {font-size:19px;font-weight:700;fill:#315c78}
+    .foot {font-size:23px;fill:#40566a} .small {font-size:22px;fill:#536a80}
+  </style>
+  <text x="75" y="87" class="title">Gmail 自動收發信程式架構</text>
+  <text x="77" y="130" class="subtitle">依使用者選擇執行讀信、寄信、驗證與延伸功能</text>
+  <rect x="75" y="180" width="740" height="170" rx="18" fill="#eff5f8" stroke="#c9d8e2" stroke-width="2"/>
+  <text x="110" y="235" class="box-title">命令列入口</text>
+  <text x="110" y="278" class="detail">接收操作與參數，解析指令並顯示錯誤</text>
+  <text x="110" y="318" class="small">例如讀信、寄信與寄後驗證</text>
+  <path d="M 832 265 H 953" stroke="#687c8f" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <rect x="975" y="180" width="750" height="170" rx="18" fill="#eff5f8" stroke="#c9d8e2" stroke-width="2"/>
+  <text x="1010" y="235" class="box-title">帳密與設定</text>
+  <text x="1010" y="278" class="func">load_settings</text>
+  <text x="1010" y="318" class="detail">帳號讀自環境變數；密碼由環境變數或隱藏提示取得</text>
+  <text x="75" y="420" class="section">依指令選擇功能</text>
+  <path d="M 75 439 H 1725" stroke="#d9e2e8" stroke-width="2"/>
+  <rect x="75" y="475" width="525" height="282" rx="16" fill="#ffffff" stroke="#c9d8e2" stroke-width="2"/>
+  <rect x="105" y="505" width="85" height="34" rx="8" fill="#e1eef4"/><text x="121" y="529" class="badge">IMAP</text>
+  <text x="105" y="584" class="box-title">讀取與篩選信件</text><text x="105" y="628" class="func">list_latest</text>
+  <text x="105" y="679" class="detail">讀取標頭，解析日期、寄件者與主旨</text><text x="105" y="718" class="detail">可篩選未讀、日期及主旨</text>
+  <rect x="638" y="475" width="525" height="282" rx="16" fill="#ffffff" stroke="#c9d8e2" stroke-width="2"/>
+  <rect x="668" y="505" width="85" height="34" rx="8" fill="#e1eef4"/><text x="682" y="529" class="badge">SMTP</text>
+  <text x="668" y="584" class="box-title">寄送信件與附件</text><text x="668" y="628" class="func">send_mail</text>
+  <text x="668" y="679" class="detail">建立郵件並寄給指定收件者</text><text x="668" y="718" class="detail">可加入一個或多個附件</text>
+  <rect x="1200" y="475" width="525" height="282" rx="16" fill="#ffffff" stroke="#c9d8e2" stroke-width="2"/>
+  <rect x="1230" y="505" width="182" height="34" rx="8" fill="#e1eef4"/><text x="1245" y="529" class="badge">SMTP → IMAP</text>
+  <text x="1230" y="584" class="box-title">寄送後驗證</text><text x="1230" y="628" class="func">verify_delivery</text>
+  <text x="1230" y="679" class="detail">自寄後以 Message-ID 搜尋收件匣</text><text x="1230" y="718" class="detail">記錄找到信件所需時間</text>
+  <rect x="75" y="795" width="525" height="282" rx="16" fill="#ffffff" stroke="#c9d8e2" stroke-width="2"/>
+  <rect x="105" y="825" width="85" height="34" rx="8" fill="#e1eef4"/><text x="121" y="849" class="badge">IMAP</text>
+  <text x="105" y="904" class="box-title">信件存檔</text><text x="105" y="948" class="func">export_message</text>
+  <text x="105" y="999" class="detail">將唯一符合的原始信件存為 EML</text><text x="105" y="1038" class="detail">檔案包含信件標頭與內容</text>
+  <rect x="638" y="795" width="525" height="282" rx="16" fill="#ffffff" stroke="#c9d8e2" stroke-width="2"/>
+  <rect x="668" y="825" width="179" height="34" rx="8" fill="#e1eef4"/><text x="682" y="849" class="badge">IMAP → SMTP</text>
+  <text x="668" y="904" class="box-title">單次自動回覆</text><text x="668" y="948" class="func">auto_reply_once</text>
+  <text x="668" y="999" class="detail">回覆符合條件的本人測試信</text><text x="668" y="1038" class="detail">保留紀錄，避免重複處理</text>
+  <rect x="1200" y="795" width="525" height="282" rx="16" fill="#ffffff" stroke="#c9d8e2" stroke-width="2"/>
+  <rect x="1230" y="825" width="119" height="34" rx="8" fill="#e1eef4"/><text x="1247" y="849" class="badge">選擇性</text>
+  <text x="1230" y="904" class="box-title">保存執行紀錄</text><text x="1230" y="948" class="func">save_result</text>
+  <text x="1230" y="999" class="detail">保存時間、狀態、數量及耗時等</text><text x="1230" y="1038" class="detail">不包含信件標頭、內文與密碼</text>
+  <path d="M 75 1134 H 1725" stroke="#d9e2e8" stroke-width="2"/>
+  <text x="75" y="1195" class="foot">說明：各功能依指令獨立執行；執行紀錄需選用 --save-result。</text>
+  <text x="75" y="1240" class="foot">信件存檔與執行紀錄為不同檔案；EML 可能包含個人資料。</text>
+  <text x="75" y="1295" class="small">資料結構期中作業　｜　Gmail 自動讀寫程式</text>
+</svg>

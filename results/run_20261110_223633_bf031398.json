@@ -1,0 +1,11 @@
+{
+  "time": "2026-11-10T22:36:33+08:00",
+  "command": "list",
+  "status": "成功",
+  "total": 153,
+  "matched": 136,
+  "read_count": 5,
+  "filters": [
+    "unread"
+  ]
+}

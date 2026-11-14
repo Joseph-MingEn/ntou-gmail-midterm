@@ -1,0 +1,12 @@
+# Local environments and credentials
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+config.json
+results/.auto_reply_guard/
+# Real exported mail is private; this one checked-in example is anonymized.
+*.eml
+!results/F3_寄後驗證_20261110.eml
